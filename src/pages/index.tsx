@@ -11,7 +11,7 @@ export default function Home() {
       <header>
         <img src={logo} alt="logo" />
         <p>
-          Hello ice.js 3
+          test
         </p>
       </header>
       <main>
