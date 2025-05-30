@@ -63,9 +63,7 @@ const DepartmentList: React.FC = () => {
         message.success('添加成功');
       } else {
         setDepartments(
-          departments.map(item =>
-            item.id === editingId ? { ...item, ...values } : item
-          )
+          departments.map(item => (item.id === editingId ? { ...item, ...values } : item))
         );
         message.success('更新成功');
       }

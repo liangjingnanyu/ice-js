@@ -1,30 +1,30 @@
 module.exports = {
-  extends: [
-    'eslint-config-prettier',
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:prettier/recommended',
-  ],
-  plugins: ['react', 'prettier'],
-  rules: {
-    'prettier/prettier': 'error',
-  },
-  parserOptions: {
-    ecmaVersion: 2021,
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true,
-      tsx: true,
-    },
-  },
   env: {
     browser: true,
     es2021: true,
-    node: true,
+    jest: true,
   },
-  settings: {
-    react: {
-      version: 'detect',
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
     },
+    ecmaVersion: 12,
+    sourceType: 'module',
+  },
+  plugins: ['react', '@typescript-eslint'],
+  rules: {
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
+    '@typescript-eslint/no-explicit-any': 'warn',
+    'prefer-const': 'warn',
+    'no-console': 'warn',
+    'no-debugger': 'error',
   },
 };

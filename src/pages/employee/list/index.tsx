@@ -69,9 +69,7 @@ const EmployeeList: React.FC = () => {
       } else {
         // 编辑
         setEmployees(
-          employees.map(item =>
-            item.id === editingId ? { ...item, ...values } : item
-          )
+          employees.map(item => (item.id === editingId ? { ...item, ...values } : item))
         );
         message.success('更新成功');
       }
@@ -94,11 +92,7 @@ const EmployeeList: React.FC = () => {
         onCancel={() => setIsModalVisible(false)}
       >
         <Form form={form} layout="vertical">
-          <Form.Item
-            name="name"
-            label="姓名"
-            rules={[{ required: true, message: '请输入姓名' }]}
-          >
+          <Form.Item name="name" label="姓名" rules={[{ required: true, message: '请输入姓名' }]}>
             <Input />
           </Form.Item>
           <Form.Item
@@ -115,11 +109,7 @@ const EmployeeList: React.FC = () => {
           >
             <Input />
           </Form.Item>
-          <Form.Item
-            name="phone"
-            label="电话"
-            rules={[{ required: true, message: '请输入电话' }]}
-          >
+          <Form.Item name="phone" label="电话" rules={[{ required: true, message: '请输入电话' }]}>
             <Input />
           </Form.Item>
           <Form.Item
@@ -127,7 +117,7 @@ const EmployeeList: React.FC = () => {
             label="邮箱"
             rules={[
               { required: true, message: '请输入邮箱' },
-              { type: 'email', message: '请输入有效的邮箱地址' }
+              { type: 'email', message: '请输入有效的邮箱地址' },
             ]}
           >
             <Input />
